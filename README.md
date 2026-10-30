@@ -1,19 +1,19 @@
-# 2ο Εσπερινό ΕΠΑ.Λ. Καβάλας — Homepage Concept
+# 2ο Εσπερινό ΕΠΑ.Λ. Καβάλας — Website Redesign Concept
 
-**Status:** Unofficial visual/technical prototype for school review. The school's live website has not been modified.
+> **Unofficial prototype for review**, not the school's official website. The live school website has not been changed.
 
-This ZIP contains:
+A responsive, Greek-language homepage concept for the 2nd Evening Vocational High School of Kavala, built as a volunteer portfolio project.
 
-- `preview/index.html` — static, **offline** demo. Open it directly in Chrome, Edge, or Firefox, no npm needed.
-- `react/` — source for a real **React 18 + TypeScript + Vite** homepage, sharing the same content and layout.
+## Preview
 
-## 1. Show the prototype to the school
+- **GitHub Pages:** https://kristinelio.github.io/epal-kavala-website/ (available after Pages is enabled and its first successful deployment)
+- **Standalone preview:** `index.html` (opens without Node or a server)
+- **React + TypeScript source:** `react/` (React 18, TypeScript, Vite, custom CSS)
+- **WordPress:** `react/src/wordpress.ts` contains an *optional*, read-only WordPress REST API adapter.
 
-Extract the ZIP and double-click `preview/index.html`. It has responsive navigation, clickable sector links, a school schedule link, and a proposed announcements layout. It does **not** need a server.
+## Run locally
 
-## 2. Develop the React version
-
-With Node.js 20+ and an internet connection:
+Requirements: Node.js 20+ and npm.
 
 ```bash
 cd react
@@ -21,36 +21,37 @@ npm install
 npm run dev
 ```
 
-Open the local URL shown by Vite. For a production bundle, run `npm run build`. Dependencies are intentionally not bundled in the ZIP; they are downloaded by npm. The React build was not executed in this environment because npm package registry connectivity is unavailable.
+Build:
 
-## 3. WordPress as read-only announcements CMS (optional)
-
-The React project includes `react/src/wordpress.ts`, a read-only adapter for a **public** WordPress REST API. To enable it, copy `.env.example` to `.env.local` and set:
-
-```text
-VITE_WORDPRESS_API_BASE=https://YOUR-WORDPRESS-HOST/wp-json/wp/v2
+```bash
+npm run build
 ```
 
-The URL must be a WordPress REST API base exposing `/posts`; content must be publicly readable and **CORS must allow the frontend origin**. The prototype does not include authenticated editing, privileged WordPress access, or migration. On API failure, it keeps the prominently labeled fallback announcements. No WordPress credentials should be placed in Vite environment variables.
+The app uses Vite base `/epal-kavala-website/` for deployment to GitHub Pages. Set the correct `base` in `react/vite.config.ts` if the repository or hosting path changes.
 
-Before going live, check whether the school is on the restricted `blogs.sch.gr` environment or the standalone school hosting service, and agree on the most maintainable deployment approach with the designated administrator.
+## GitHub Pages deployment
 
-## 4. Content accuracy / approval checklist
+The `.github/workflows/pages.yml` workflow installs dependencies, type-checks and builds the React app, and deploys `react/dist`. On GitHub open **Settings → Pages → Build and deployment → Source → GitHub Actions**. The next workflow run publishes the React version. Check **Actions** for any build or deployment failures.
 
-- School identity, address and telephone from its [official ΠΣΔ listing](https://www.sch.gr/sites/sch-units/view?registry_no=2140070).
-- Contact email appears in published school directories and should be confirmed by the school.
-- Six study areas are **historical sections of the current blog**, not verified 2026–2027 offerings. Confirm the active departments and specialties.
-- 18:00–22:30 is from an existing school page; confirm today's actual operating hours.
-- The first announcement is a real school post dated 15 February 2026; the other two are explicitly illustrative placeholders.
-- The schedule links to the EduPage URL referenced by that real school post.
-- The hero is an original **vector illustration**, not a photograph of the school or a precise depiction of Kavala.
-- Review accessible keyboard navigation, responsive layout, privacy, translations, text copy, current regulations, and approval for public posting.
-- Obtain explicit permission before making public claims or replacing the live site.
+## Optional WordPress connection
 
-## 5. Suggested handover
+The prototype can load **public** posts from the WordPress REST API.
 
-A non-technical school staff member should be able to create and edit posts in WordPress without working with React. Provide a short editing guide, and designate an administrator for routine security and hosting maintenance.
+1. Copy `react/.env.example` to `react/.env.local`.
+2. Set `VITE_WORDPRESS_API_BASE=https://YOUR-WORDPRESS-SITE/wp-json/wp/v2`.
+3. Confirm public post access and CORS on the WordPress host.
 
-## Not included
+If the API is absent or unavailable, the homepage clearly labels the fallback/sample announcements. **Never place credentials in Vite environment variables** because frontend environment values can be exposed to visitors. No WordPress migration, login, or administrative access is included.
 
-No live WordPress connection configured, no hosting deployment, no changes to `sch.gr`, no domain migration, and no login system. The prototype is only a homepage, not a full multi-page website.
+## Content approval before launch
+
+- Verify the school's identity, contact details, and current operating hours with school administration.
+- The six study areas are based on *historical existing website pages*, not verified current-year offerings.
+- The announcement section contains one school announcement from February 2026 and two explicitly labeled samples.
+- The illustration is original vector artwork, **not a photograph of the school**.
+- Confirm all school content, images, student privacy, accessibility and publication rights before replacing the official website.
+- Ensure that a designated staff member can maintain content after volunteer handover.
+
+## Status
+
+This is a **homepage prototype**, not a complete school site. The official `sch.gr` site has **not** been modified. GitHub Pages only serves the frontend; WordPress requires compatible hosting and its own management.
