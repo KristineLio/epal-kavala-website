@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 960" role="img" aria-labelledby="title description">
+<title id="title">Εικονογραφημένο βραδινό τοπίο της Καβάλας</title>
+<desc id="description">Καλλιτεχνική απεικόνιση παραθαλάσσιας ελληνικής πόλης το σούρουπο, όχι φωτογραφία του σχολείου.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0.15" y2="1"><stop offset="0" stop-color="#182c45"/><stop offset=".35" stop-color="#35556d"/><stop offset=".69" stop-color="#947a87"/><stop offset="1" stop-color="#dca68b"/></linearGradient>
+  <linearGradient id="sea" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#31495e"/><stop offset="1" stop-color="#101f35"/></linearGradient>
+  <linearGradient id="building" x1="0" y1="0" x2=".6" y2="1"><stop offset="0" stop-color="#466174"/><stop offset="1" stop-color="#172c43"/></linearGradient>
+  <radialGradient id="glow"><stop offset="0" stop-color="#f8d5a2" stop-opacity=".5"/><stop offset="1" stop-color="#e4a38f" stop-opacity="0"/></radialGradient>
+  <filter id="blur"><feGaussianBlur stdDeviation="15"/></filter>
+  <pattern id="windows" width="50" height="47" patternUnits="userSpaceOnUse"><rect x="13" y="15" width="9" height="15" rx="1" fill="#f3cf9a" opacity=".72"/><rect x="34" y="12" width="7" height="16" rx="1" fill="#acbfbd" opacity=".4"/></pattern>
+</defs>
+<rect width="900" height="960" fill="url(#sky)"/>
+<circle cx="675" cy="244" r="285" fill="url(#glow)"/>
+<circle cx="696" cy="234" r="63" fill="#ffdbc0" opacity=".83"/>
+<circle cx="696" cy="234" r="84" fill="#ffd5b2" opacity=".25" filter="url(#blur)"/>
+<path d="M0 467 C102 430 211 473 317 445 S542 433 650 456 803 417 900 447 L900 670 0 670Z" fill="#566277" opacity=".46"/>
+<path d="M0 553 C143 515 246 536 345 506 S594 503 720 528 841 510 900 500 L900 672 0 672Z" fill="#2d4659" opacity=".9"/>
+<path d="M0 674 C165 658 280 687 417 661 S731 680 900 650 L900 960 0 960Z" fill="url(#sea)"/>
+<path d="M0 696 C250 714 602 689 900 705" stroke="#e6ad8e" stroke-width="2" opacity=".35" fill="none"/>
+<path d="M0 740 C280 720 641 745 900 726" stroke="#97a8b3" stroke-width="2" opacity=".18" fill="none"/>
+<path d="M0 795 C340 780 593 806 900 784" stroke="#aab9bf" stroke-width="2" opacity=".13" fill="none"/>
+<path d="M80 508 L137 471 196 482 250 450 292 474 357 436 420 461 468 444 521 487 576 480 622 502 693 480 745 511 808 479 900 506 900 663 0 666 0 529Z" fill="#223849"/>
+<path d="M90 511 L150 492 195 495 195 659 90 662Z M199 493 L250 466 300 490 300 657 199 657Z M304 482 L362 459 418 479 418 663 304 663Z M420 468 L469 450 528 483 528 663 420 663Z M531 486 L580 480 627 512 627 661 531 661Z M630 503 L681 480 736 503 736 661 630 661Z M742 516 L802 484 870 510 870 662 742 662Z" fill="url(#building)" stroke="#688092" stroke-opacity=".26" stroke-width="3"/>
+<path d="M90 511 L150 492 195 495 195 659 90 662Z M199 493 L250 466 300 490 300 657 199 657Z M304 482 L362 459 418 479 418 663 304 663Z M420 468 L469 450 528 483 528 663 420 663Z M531 486 L580 480 627 512 627 661 531 661Z M630 503 L681 480 736 503 736 661 630 661Z M742 516 L802 484 870 510 870 662 742 662Z" fill="url(#windows)" opacity=".9"/>
+<path d="M327 438 L327 392 354 392 354 371 379 371 379 394 404 394 404 447Z" fill="#182c40"/>
+<path d="M318 392 L415 392" stroke="#aeafa9" stroke-width="5" opacity=".55"/>
+<path d="M365 372 L365 349 375 349 375 372" fill="#223849"/>
+<path d="M0 658 C201 640 341 655 457 652 S753 656 900 635" stroke="#b3a49e" stroke-width="6" opacity=".5" fill="none"/>
+<g fill="#e7caa0" opacity=".65"><rect x="145" y="677" width="4" height="46"/><rect x="353" y="676" width="5" height="72"/><rect x="477" y="667" width="4" height="62"/><rect x="673" y="674" width="5" height="57"/><rect x="823" y="669" width="4" height="49"/></g>
+<g opacity=".28" stroke="#f3bd96" stroke-width="2"><path d="M10 754l84 1 M170 780l68 1 M367 750l137 0 M572 800l100-2 M717 739l158 0"/><path d="M52 814l79 0 M285 845l66-2 M500 860l141 0 M754 875l95-1"/></g>
+<g fill="#d5e1e0" opacity=".7"><circle cx="118" cy="191" r="2"/><circle cx="284" cy="106" r="1.5"/><circle cx="473" cy="174" r="2"/><circle cx="812" cy="103" r="1.5"/></g>
+</svg>
